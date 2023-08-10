@@ -1,10 +1,7 @@
 const router = require('express').Router();
 
-//const userRoutes = require('./');
+const userRoutes = require('./users');
 
-//router.use('/users', userRoutes);
-router.get('/', async (req, res) => {
-    res.send('Hello World')
-})
+router.use('/users', userRoutes);
 
 module.exports = router;
