@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS ;
+DROP DATABASE IF EXISTS culinary_connections_db;
 
-CREATE DATABASE ;
+CREATE DATABASE culinary_connections_db;
