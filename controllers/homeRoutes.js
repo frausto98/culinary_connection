@@ -37,4 +37,32 @@ router.get('/', async (req, res) => {
     }
 });
 
+// get one recipe
+router.get('/recipe/:id', async (req, res) => {
+    try {
+        const recipeData = await Recipe.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Steps,
+                    attributes: ['id', 'step_number', 'step_text', 'recipe_id',]
+                },
+                {
+                    model: Ingredients,
+                    attributes: ['id', 'ingredient_name', 'indgredient_quantity', 'ingredient_measurment', 'recipe_id']
+                },
+                {
+                    model: User,
+                    attributes: ['id', 'username']
+                }
+            ],
+        });
+
+        const recipe = recipeData.get({ plain: true });
+        res.render('recipe', { recipe, loggedIn: req.session.loggedIn });
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
 module.exports = router;
