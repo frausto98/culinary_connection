@@ -1,6 +1,7 @@
 const User = require('./User');
 const Ingredient = require('./Ingredient');
 const Recipe = require('./Recipe');
+const Ratings = require('./Ratings');
 
 Recipe.belongsTo(User, {
     foreignKey: 'user_id',
@@ -16,6 +17,15 @@ Ingredient.belongsTo(Recipe, {
 });
 
 Recipe.hasMany(Ingredient, {
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
+});
+
+Ratings.belongsTo(Recipe, {
+    foreignKey: 'recipe_id',
+});
+
+Recipe.hasMany(Ratings, {
     foreignKey: 'recipe_id',
     onDelete: 'CASCADE'
 });
