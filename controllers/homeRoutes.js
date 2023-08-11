@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Recipe, User } = require('../models');
+const { Recipe, User, Ratings } = require('../models');
 // add auth middleware
 const withAuth = require('../utils/auth');
 
@@ -26,9 +26,14 @@ router.get('/', async (req, res) => {
         const recipes = recipeData.map((recipe) =>
             recipe.get({ plain: true })
         );
+        const ratingsData = await Ratings.findAll();
+        const ratings  = ratingsData.map((rating) =>
+        rating.get({ plain: true })
+        );
 
         res.render('homepage', {
             recipes,
+            ratings,
             loggedIn: req.session.loggedIn,
         });
     } catch (err) {
@@ -65,4 +70,33 @@ router.get('/recipe/:id', async (req, res) => {
     }
 });
 
+//moved ratings filter to resulttss page
+router.get('/ratings/:rating', async (req, res) => {
+    try {
+        const ratingsData = await Ratings.findAll({
+            where: {
+                rating: req.params.rating,
+            }
+        });
+        const ratings = ratingsData.map((rating) => rating.get({ plain: true }));
+       
+        res.render('results', {
+            ratings,
+            loggedIn: req.session.loggedIn,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
+
+router.get('/login', (req, res) => {
+    try {
+        res.render('landingpage');
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
 module.exports = router;
