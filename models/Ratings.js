@@ -12,7 +12,7 @@ Ratings.init(
             autoIncrement: true
         },
         rating: {
-            type:DataTypes.STRING,
+            type:DataTypes.INTEGER,
             allowNull: false,
         },
         recipe_id: {
