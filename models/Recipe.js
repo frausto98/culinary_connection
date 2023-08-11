@@ -24,14 +24,14 @@ Recipe.init(
             type:DataTypes.STRING,
             allowNull: false,
         },
-        recipe_steps: {
-            type:DataTypes.STRING,
-            allowNull: false,
-        },
-        recipe_ingredients: {
-            type:DataTypes.STRING,
-            allowNull: false,
-        },
+        // recipe_steps: {
+        //     type:DataTypes.STRING,
+        //     allowNull: false,
+        // },
+        // recipe_ingredients: {
+        //     type:DataTypes.STRING,
+        //     allowNull: false,
+        // },
         // User_id: {
         //     type:DataTypes.INTEGER,
         //     references: {

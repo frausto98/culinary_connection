@@ -12,7 +12,7 @@ User.hasMany(Recipe, {
     onDelete: 'CASCADE'
 });
 
-Ingredient.belongsTo(Recipe, {
+Ingredient.belongsToMany(Recipe, {
     foreignKey: 'recipe_id',
 });
 
