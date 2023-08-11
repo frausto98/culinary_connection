@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Recipe, User, Ratings } = require('../models');
+const { Recipe, User, Steps, Ingredient } = require('../models');
 // add auth middleware
 const withAuth = require('../utils/auth');
 
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
                     attributes: ['id', 'step_number', 'step_text', 'recipe_id',]
                 },
                 {
-                    model: Ingredients,
+                    model: Ingredient,
                     attributes: ['id', 'ingredient_name', 'indgredient_quantity', 'ingredient_measurment', 'recipe_id']
                 },
                 {

@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-route.put('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const step = await Steps.update({
             step_number: req.body.step_number,
@@ -34,7 +34,7 @@ route.put('/:id', async (req, res) => {
         }
     }),
 
-route.delete('/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try  {
         const step = await Steps.destroy({
             where: {

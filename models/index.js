@@ -13,7 +13,7 @@ User.hasMany(Recipe, {
 });
 
 Ingredient.belongsToMany(Recipe, {
-    foreignKey: 'recipe_id',
+    through: 'recipe_ingredient',
 });
 
 Recipe.hasMany(Ingredient, {
@@ -30,4 +30,4 @@ Recipe.hasMany(Steps, {
     onDelete: 'CASCADE'
 });
 
-module.exports = { User, Ingredient, Recipe };
+module.exports = { User, Ingredient, Recipe, Steps };

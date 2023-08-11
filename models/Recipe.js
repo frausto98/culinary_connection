@@ -32,13 +32,13 @@ Recipe.init(
         //     type:DataTypes.STRING,
         //     allowNull: false,
         // },
-        // User_id: {
-        //     type:DataTypes.INTEGER,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id'
-        //     }
-        // }
+        User_id: {
+            type:DataTypes.INTEGER,
+            // references: {
+            //     model: 'user',
+            //     key: 'id'
+            // }
+        },
         //DRY code above foregin keys are referenced in index.js
         //difficulty level
         difficulty_level: {
