@@ -39,4 +39,4 @@ Ratings.init(
     }
 );
 
-module.exports = Ratings;
+//module.exports = Ratings;
