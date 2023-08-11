@@ -17,6 +17,39 @@ router.post('/', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
+}),
+
+router.put('/:id', async (req, res) => {
+    try  {
+        const recipe = await Recipe.update({
+            recipe_name: req.body.recipe_name,
+            recipe_description: req.body.recipe_description,
+            recipe_instructions: req.body.recipe_instructions,
+            difficulty_level: req.body.difficulty_level,
+        },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            });
+            
+        }
+    catch (err) {
+        res.status(400).json(err);
+    }
 })
+
+router.delete('/:id', async (req, res) => {
+    try  {
+        const recipe = await Recipe.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        }
+    catch (err) {
+        res.status(400).json(err);
+    }
+});
 
 module.exports = router;

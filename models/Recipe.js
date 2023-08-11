@@ -43,6 +43,7 @@ Recipe.init(
         //difficulty level
         difficulty_level: {
             type:  DataTypes.INTEGER,
+            allowNull: false,
             
     },
 },
