@@ -1,23 +1,23 @@
-const {Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Recipe extends Model {}
+class Recipe extends Model { }
 
 Recipe.init(
     {
         id: {
-            type:DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
         recipe_name: {
-            type:DataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true,
         },
         recipe_description: {
-            type:DataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         // recipe_steps: {
@@ -33,7 +33,7 @@ Recipe.init(
         //     allowNull: false,
         // },
         user_id: {
-            type:DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
@@ -42,12 +42,16 @@ Recipe.init(
         //DRY code above foregin keys are referenced in index.js
         //difficulty level
         difficulty_level: {
-            type:  DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             //add validate that it's either 1, 2, or 3
-            
+
+        },
+        cloudinary: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     },
-},
     {
         sequelize,
         timestamps: false,
