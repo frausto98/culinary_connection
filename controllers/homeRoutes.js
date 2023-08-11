@@ -26,7 +26,11 @@ router.get('/', async (req, res) => {
         const recipes = recipeData.map((recipe) =>
             recipe.get({ plain: true })
         );
-        const ratingsData = await Ratings.findAll();
+        const ratingsData = await User.findAll({
+            where: {
+                rating: req.params.rating,
+            }
+        });
         const ratings  = ratingsData.map((rating) =>
         rating.get({ plain: true })
         );
@@ -70,33 +74,33 @@ router.get('/recipe/:id', async (req, res) => {
     }
 });
 
-//moved ratings filter to resulttss page
-router.get('/ratings/:rating', async (req, res) => {
-    try {
-        const ratingsData = await Ratings.findAll({
-            where: {
-                rating: req.params.rating,
-            }
-        });
-        const ratings = ratingsData.map((rating) => rating.get({ plain: true }));
+// //moved ratings filter to resulttss page
+// router.get('/ratings/:rating', async (req, res) => {
+//     try {
+//         const ratingsData = await Ratings.findAll({
+//             where: {
+//                 rating: req.params.rating,
+//             }
+//         });
+//         const ratings = ratingsData.map((rating) => rating.get({ plain: true }));
        
-        res.render('results', {
-            ratings,
-            loggedIn: req.session.loggedIn,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-        console.log(err);
-    }
-});
+//         res.render('results', {
+//             ratings,
+//             loggedIn: req.session.loggedIn,
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//         console.log(err);
+//     }
+// });
 
 
 router.get('/login', (req, res) => {
-    try {
-        res.render('landingpage');
-    } catch (err) {
-        res.status(500).json(err);
-        console.log(err);
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
     }
+    res.render('landingpage');
+
 });
 module.exports = router;
