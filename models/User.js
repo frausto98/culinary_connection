@@ -36,13 +36,13 @@ User.init(
                 len: [12]
             }
         },
-        rating:{
-            type:DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                isNumeric: true
-            }
-        },
+        // rating:{
+        //     type:DataTypes.INTEGER,
+        //     allowNull: false,
+        //     validate: {
+        //         isNumeric: true
+        //     }
+        // },
     },
     {
         hooks: {

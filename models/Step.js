@@ -1,9 +1,9 @@
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Ratings extends Model {}
+class Steps extends Model {}
 
-Ratings.init(
+Steps.init(
     {
         id: {
             type:DataTypes.INTEGER,
@@ -11,21 +11,18 @@ Ratings.init(
             primaryKey: true,
             autoIncrement: true
         },
-        rating: {
+        step_number: {
             type:DataTypes.INTEGER,
+            allowNull: false,
+        },
+        step_description: {
+            type:DataTypes.STRING,
             allowNull: false,
         },
         recipe_id: {
             type:DataTypes.INTEGER,
             references: {
                 model: 'recipe',
-                key: 'id'
-            }
-        },
-        user_id: {
-            type:DataTypes.INTEGER,
-            references: {
-                model: 'user',
                 key: 'id'
             }
         }
@@ -35,8 +32,8 @@ Ratings.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'ratings',
+        modelName: 'steps',
     }
 );
 
-//module.exports = Ratings;
+module.exports = Steps;
