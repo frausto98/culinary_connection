@@ -47,10 +47,10 @@ Recipe.init(
             //add validate that it's either 1, 2, or 3
 
         },
-        cloudinary: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        // cloudinary: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
     },
     {
         sequelize,

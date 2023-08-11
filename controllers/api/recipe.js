@@ -9,7 +9,6 @@ router.post('/', async (req, res) => {
         const recipe = await Recipe.create({
             recipe_name: req.body.recipe_name,
             recipe_description: req.body.recipe_description,
-            recipe_instructions: req.body.recipe_instructions,
             difficulty_level: req.body.difficulty_level,
         });
 
@@ -24,7 +23,6 @@ router.put('/:id', async (req, res) => {
         const recipe = await Recipe.update({
             recipe_name: req.body.recipe_name,
             recipe_description: req.body.recipe_description,
-            recipe_instructions: req.body.recipe_instructions,
             difficulty_level: req.body.difficulty_level,
         },
             {
