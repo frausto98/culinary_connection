@@ -20,10 +20,6 @@ Ingredient.init(
             type:DataTypes.STRING,
             allowNull: false,
         },
-        // ingredient_measurement: {
-        //     type:DataTypes.STRING,
-        //     allowNull: false,
-        // },
         recipe_id: {
             type:DataTypes.INTEGER,
             references: {
