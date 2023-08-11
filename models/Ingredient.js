@@ -16,7 +16,7 @@ Ingredient.init(
             allowNull: false,
             unique: true,
         },
-        ingredient_description: {
+        measurement: {
             type:DataTypes.STRING,
             allowNull: false,
         },
@@ -24,13 +24,13 @@ Ingredient.init(
         //     type:DataTypes.STRING,
         //     allowNull: false,
         // },
-        // recipe_id: {
-        //     type:DataTypes.INTEGER,
-        //     // references: {
-        //     //     model: 'recipe',
-        //     //     key: 'id'
-        //     // }
-        // }
+        recipe_id: {
+            type:DataTypes.INTEGER,
+            references: {
+                model: 'recipe',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
