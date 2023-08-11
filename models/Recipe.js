@@ -20,10 +20,10 @@ Recipe.init(
             type:DataTypes.STRING,
             allowNull: false,
         },
-        recipe_instructions: {
-            type:DataTypes.STRING,
-            allowNull: false,
-        },
+        // recipe_steps: {
+        //     type:DataTypes.STRING,
+        //     allowNull: false,
+        // },
         // recipe_steps: {
         //     type:DataTypes.STRING,
         //     allowNull: false,
@@ -32,18 +32,19 @@ Recipe.init(
         //     type:DataTypes.STRING,
         //     allowNull: false,
         // },
-        User_id: {
+        user_id: {
             type:DataTypes.INTEGER,
-            // references: {
-            //     model: 'user',
-            //     key: 'id'
-            // }
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         },
         //DRY code above foregin keys are referenced in index.js
         //difficulty level
         difficulty_level: {
             type:  DataTypes.INTEGER,
             allowNull: false,
+            //add validate that it's either 1, 2, or 3
             
     },
 },

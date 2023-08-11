@@ -1,7 +1,7 @@
 // post, put, and delete routes for steps
 
 const router = require('express').Router();
-const Steps = require('../../models/Steps');
+const Steps = require('../../models/Step');
 
 // create new step
 router.post('/', async (req, res) => {
