@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
     try {
         const ingredient = await Ingredient.create({
             ingredient_name: req.body.ingredient_name,
-            ingredient_description: req.body.ingredient_description,
+            measurement: req.body.measurement,
         });
 
         res.status(200).json(ingredient);
@@ -21,7 +21,7 @@ router.put('/:id', async (req, res) => {
     try  {
         const ingredient = await Ingredient.update({
             ingredient_name: req.body.ingredient_name,
-            ingredient_description: req.body.ingredient_description,
+            measurement: req.body.measurement,
         },
             {
                 where: {

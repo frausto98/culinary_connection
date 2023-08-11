@@ -10,11 +10,11 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: Steps, 
-                    attributes: ['id', 'step_number', 'step_text', 'recipe_id',]
+                    attributes: ['id', 'step_number', 'step_description', 'recipe_id',]
                 },
                 {
                     model: Ingredient,
-                    attributes: ['id', 'ingredient_name', 'indgredient_quantity', 'ingredient_measurment', 'recipe_id']
+                    attributes: ['id', 'ingredient_name', 'measurement', 'recipe_id']
                 },
                 {
                     model: User,
@@ -26,18 +26,10 @@ router.get('/', async (req, res) => {
         const recipes = recipeData.map((recipe) =>
             recipe.get({ plain: true })
         );
-        const ratingsData = await User.findAll({
-            where: {
-                rating: req.params.rating,
-            }
-        });
-        const ratings  = ratingsData.map((rating) =>
-        rating.get({ plain: true })
-        );
+        
 
         res.render('homepage', {
             recipes,
-            ratings,
             loggedIn: req.session.loggedIn,
         });
     } catch (err) {
@@ -53,11 +45,11 @@ router.get('/recipe/:id', async (req, res) => {
             include: [
                 {
                     model: Steps,
-                    attributes: ['id', 'step_number', 'step_text', 'recipe_id',]
+                    attributes: ['id', 'step_number', 'step_description', 'recipe_id',]
                 },
                 {
-                    model: Ingredients,
-                    attributes: ['id', 'ingredient_name', 'indgredient_quantity', 'ingredient_measurment', 'recipe_id']
+                    model: Ingredient,
+                    attributes: ['id', 'ingredient_name', 'measurement', 'recipe_id']
                 },
                 {
                     model: User,
