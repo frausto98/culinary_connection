@@ -16,20 +16,20 @@ Ingredient.init(
             allowNull: false,
             unique: true,
         },
-        ingredient_quantity: {
+        ingredient_description: {
             type:DataTypes.STRING,
             allowNull: false,
         },
-        ingredient_measurement: {
-            type:DataTypes.STRING,
-            allowNull: false,
-        },
+        // ingredient_measurement: {
+        //     type:DataTypes.STRING,
+        //     allowNull: false,
+        // },
         recipe_id: {
             type:DataTypes.INTEGER,
-            references: {
-                model: 'recipe',
-                key: 'id'
-            }
+            // references: {
+            //     model: 'recipe',
+            //     key: 'id'
+            // }
         }
     },
     {
