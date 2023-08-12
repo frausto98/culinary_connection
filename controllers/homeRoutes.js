@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Recipe, User, Steps, Ingredient } = require('../models');
+const SavedRecipe = require('../models/SavedRecipe');
 // add auth middleware
 const withAuth = require('../utils/auth');
 
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-
+//  if you need to run the homepage, remove the withAuth middleware
 // get all recipes for homepage
 router.get('/home', withAuth, async (req, res) => {
     try {
@@ -21,15 +22,15 @@ router.get('/home', withAuth, async (req, res) => {
             include: [
                 {
                     model: Steps, 
-                    attributes: ['id', 'step_number', 'step_description', 'recipe_id',]
+                    attributes: ['step_number', 'step_description', 'recipe_id',]
                 },
                 {
                     model: Ingredient,
-                    attributes: ['id', 'ingredient_name', 'measurement', 'recipe_id']
+                    attributes: ['ingredient_name', 'measurement', 'recipe_id']
                 },
                 {
                     model: User,
-                    attributes: ['id', 'username']
+                    attributes: ['username']
                 }
             ],
         });
@@ -48,6 +49,24 @@ router.get('/home', withAuth, async (req, res) => {
         console.log(err);
     }
 });
+
+// route to your dashboard
+router.get('/you', async (req, res) => {
+    try {
+        // const userData = await User.findByPk(req.session.user_id, {
+        //     attributes: { exclude: ['password', 'id'] },
+        //     include: [{ model: Recipe}, 
+        //         {model: SavedRecipe}],
+        // });
+        // const  user = userData.get({ plain: true });
+
+        res.render('dashboard', { loggedIn: req.session.loggedIn});
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
 
 // get one recipe
 router.get('/recipe/:id', async (req, res) => {
@@ -98,12 +117,12 @@ router.get('/recipe/:id', async (req, res) => {
 // });
 
 
-// router.get('/login', (req, res) => {
-//     if (req.session.loggedIn) {
-//         res.redirect('/');
-//         return;
-//     }
-//     res.render('login');
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/home');
+        return;
+    }
+    res.render('login');
 
-// });
+});
 module.exports = router;
