@@ -13,8 +13,9 @@ router.get('/', async (req, res) => {
     }
 });
 
+
 // get all recipes for homepage
-router.get('/home', async (req, res) => {
+router.get('/home', withAuth, async (req, res) => {
     try {
         const recipeData = await Recipe.findAll({
             include: [
@@ -97,12 +98,12 @@ router.get('/recipe/:id', async (req, res) => {
 // });
 
 
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('landingpage');
+// router.get('/login', (req, res) => {
+//     if (req.session.loggedIn) {
+//         res.redirect('/');
+//         return;
+//     }
+//     res.render('login');
 
-});
+// });
 module.exports = router;
