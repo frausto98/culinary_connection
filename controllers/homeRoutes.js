@@ -3,8 +3,18 @@ const { Recipe, User, Steps, Ingredient } = require('../models');
 // add auth middleware
 const withAuth = require('../utils/auth');
 
-// get all recipes for homepage
+// get route for welcome page(BEFORE LOGIN)
 router.get('/', async (req, res) => {
+    try {
+        res.render('welcome');
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
+// get all recipes for homepage
+router.get('/home', async (req, res) => {
     try {
         const recipeData = await Recipe.findAll({
             include: [
