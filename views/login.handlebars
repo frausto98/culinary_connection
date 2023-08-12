@@ -1,25 +1,35 @@
-<h1> this is the login</h1>
 
-
-<div class="container">
-    <div class="row">
+<div class="container green">
+    <div id="titleContainer" class="row yellow">
         <div class="col s8 offset-s2">
             <h1 class="center-align"> Culinary Connections </h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col s6  offset-s3">
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                        </div>
+    <div id="welcomeContainer" class="row blue">
+        <div class="col s8 offset-s2">
+            <h3 class="center-align"> Welcome </h3>
+        </div>
+    </div>
+
+    <div id="loginContainer" class="row">
+        <div class="col s6  offset-s3 red lighten-2">
+            <form class="col s12">
+                <div class="row">
+                    <h5 class="center-align"> Login </h5>
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label class="white-text" for="email">Email</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
                     </div>
-                </form>
-            </div>
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label class="white-text" for="password">Password</label>
+                    </div>
+                    <div class="center-align">
+                    <a class="waves-effect waves-light btn blue">button</a>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
