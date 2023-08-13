@@ -1,0 +1,25 @@
+/* css style for dashboard page */
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+nav {
+    color: #C9EFC7;
+    background-color: #4D7E3E;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+}
+
+.page-footer {
+    background-color: #4D7E3E;
+}
+
+.recipe-card-sml {
+    background-color: #C9EFC7;
+}
+/* end of dashboard css style */
