@@ -1,33 +1,14 @@
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>Culinary Connections</title>
-
-    <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="../public/css/styles.css" type="text/css" rel="stylesheet" media="screen,projection" />
-</head>
 
 <body>
-    <nav class="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Culinary Connections</a>
-            <ul class="right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Create a Recipe</a></li>
-                <li><a href="#">Login/Logout</a></li>
-            </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
+    {{>navbar}}
+
     <div class="container">
         <div class="section">
             <div class="row">
             <!-- left column begins here -->
                 <div class="col s3 recipe-feed">
-                    <h4 class="left-align">Recipes Feed</h4>
-                    <h5 class="left-align">Check out all of the recipes</h5>
+                    <h5 class="left-align">Your Recipes Feed</h5>
+                    <h6 class="left-align">Below you'll see a list of all your created and saved recipes</h6>
                     <div class="container">
                         <div class="row recipe-card-sml">
                             <h7 class="left-align">Recipe Title: Easy Chicken Pot Pie</h7>
@@ -36,7 +17,7 @@
                             <p class="left-align">Homemade chicken pot pie is comfort food at its best. This
                                 easy-to-make version utilizes rotisserie chicken, frozen vegetables, and store-bought
                                 puff pastry rather than pie dough.</p>
-                            <h8 class="left-align">Difficulty ⭐⭐⭐</h8>
+                            <h8 class="left-align">Difficulty {{>rating}}</h8>
                         </div>
                     </div>
                     <div class="container">
@@ -93,27 +74,9 @@
         </div>
     </div>
 <!-- footer start -->
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4">We developed this app to help home cooks and chefs cook their best.</p>
 
+{{> footer}}
 
-                </div>
-                <div class="col l6 s12">
-                    <h5 class="white-text">Connect</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Adrian GitHub Linkedin</a></li>
-                        <li><a class="white-text" href="#!">Sam GitHub Linkedin</a></li>
-                        <li><a class="white-text" href="#!">Stephanie GitHub Linkedin</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-<!-- footer ends -->
 <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>

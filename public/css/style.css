@@ -6,6 +6,10 @@
 .icon-block .material-icons {
     font-size: inherit;
 }
+#logo-container {
+    height: 75%;
+    padding: 5px;
+}
 
 nav {
     color: #C9EFC7;

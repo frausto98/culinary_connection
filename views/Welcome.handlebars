@@ -9,21 +9,23 @@
     <div id="top">
       <header>
         <h1>Culinary Connections</h1>
-        <p>Home</p>
+        {{!-- <p>Home</p> --}}
       </header>
     </div>
     <div id="img-container">
-      <img id="logo" src="./images/CC-Logo.svg" alt="SVG image of Logo" />
+      <img id="logo" src="../public/images/logo-color.svg" alt="SVG image of Logo" />
     </div>
     <main>
       <div id="welcome">
         <h3>Welcome</h3>
         <p>Welcome to Culinary Connection, a social media site for foodies! Here
           you can share your favorite recipes, find new recipes, and connect
-          with other foodies! Sign up today to get started!</p>
+          with other foodies! Sign up or log in today to get started!</p>
         <div id="buttons">
-          <a id="signup" href="/signup">Sign up</a>
-          <a id="login" href="/login">Login</a>
+          {{!-- <a id="signup" href="/signup">Sign up</a> --}}
+          <a id="signup" class="waves-effect waves-light btn" href="/signup">Sign Up</a>
+          <a id="login" class="waves-effect waves-light btn" href="/login">Login</a>
+          {{!-- <a id="login" href="/login">Login</a> --}}
         </div>
       </div>
       <div id="about">
