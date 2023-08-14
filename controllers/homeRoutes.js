@@ -16,12 +16,12 @@ router.get('/', async (req, res) => {
 
 //  if you need to run the homepage, remove the withAuth middleware
 // get all recipes for homepage
-router.get('/home', withAuth, async (req, res) => {
+router.get('/home', async (req, res) => {
     try {
         const recipeData = await Recipe.findAll({
             include: [
                 {
-                    model: Steps, 
+                    model: Steps,
                     attributes: ['step_number', 'step_description', 'recipe_id',]
                 },
                 {
@@ -38,7 +38,7 @@ router.get('/home', withAuth, async (req, res) => {
         const recipes = recipeData.map((recipe) =>
             recipe.get({ plain: true })
         );
-        
+
 
         res.render('homepage', {
             recipes,
@@ -60,7 +60,7 @@ router.get('/you', async (req, res) => {
         // });
         // const  user = userData.get({ plain: true });
 
-        res.render('dashboard', { loggedIn: req.session.loggedIn});
+        res.render('dashboard', { loggedIn: req.session.loggedIn });
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
@@ -70,7 +70,7 @@ router.get('/you', async (req, res) => {
 // router for creating recipes
 router.get('/create', async (req, res) => {
     try {
-        res.render('create', {loggedIn: req.session.loggedIn});
+        res.render('create', { loggedIn: req.session.loggedIn });
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
@@ -104,6 +104,34 @@ router.get('/recipe/:id', async (req, res) => {
         console.log(err);
     }
 });
+// need get route for filtering recipes by rating difficulty
+router.get('/filter/:difficulty', async (req, res) => {
+    try {
+        const recipeData = await Recipe.findAll(req.params.difficulty_level, {
+            include: [
+                {
+                    model: Steps,
+                    attributes: ['id', 'step_number', 'step_description', 'recipe_id',]
+                },
+                {
+                    model: Ingredient,
+                    attributes: ['id', 'ingredient_name', 'measurement', 'recipe_id']
+                },
+                {
+                    model: User,
+                    attributes: ['id', 'username']
+                }
+            ],
+        });
+        const recipe = recipeData.get({ plain: true });
+        res.render('recipe', { recipe, loggedIn: req.session.loggedIn });
+        
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
 
 // //moved ratings filter to resulttss page
 // router.get('/ratings/:rating', async (req, res) => {
@@ -114,7 +142,7 @@ router.get('/recipe/:id', async (req, res) => {
 //             }
 //         });
 //         const ratings = ratingsData.map((rating) => rating.get({ plain: true }));
-       
+
 //         res.render('results', {
 //             ratings,
 //             loggedIn: req.session.loggedIn,
