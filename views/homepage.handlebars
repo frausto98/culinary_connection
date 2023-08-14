@@ -1,34 +1,32 @@
+{{> navbar}}
+
 <div class="container">
     <div class="section">
         <div class="row">
             <!-- left column begins here -->
             <div class="col s3 recipe-feed">
-                <h4 class="left-align">Latest Feed <i id="filter_bt" class="small material-icons">filter_list</i></h4>
+                {{!-- <h4 class="left-align">Latest Feed <i id="filter_bt" href="#" data-target='dropdown1'
+                        class="small material-icons">filter_list</i></h4> --}}
+                <a id="filter_bt" class='dropdown-trigger btn' data-target='dropdown1'>Filter</a>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a class="easy">Easy</a></li>
+                    <li><a class="medium">Medium</a></li>
+                    <li><a class="hard">Hard</a></li>
+                </ul>
+                {{!-- <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a> --}}
+                {{#each recipe}}
+                {{> recipe}}
+                {{/each}}
                 <div class="container">
-                    <div class="row recipe-card-sml">
-                        <h7 class="left-align">Recipe Title: Easy Chicken Pot Pie</h7>
+                    <div id="recipes" class="row recipe-card-sml">
+                        <h7 class="left-align" id="title">Recipe Title</h7>
                         <br>
-                        <h8 class="left-align">Created by: Bobby Flay</h8>
-                        <p class="left-align">Homemade chicken pot pie is comfort food at its best. This
-                            easy-to-make version utilizes rotisserie chicken, frozen vegetables, and store-bought
-                            puff pastry rather than pie dough.</p>
-                        <h8 class="left-align">Difficulty ⭐⭐⭐</h8>
+                        <h8 class="left-align"></h8>
+                        <p class="left-align" id="description"></p>
+                        <h8 id="difficultyNum" class="left-align">Difficulty {{>rating}}</h8>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row recipe-card-sml">
-                        <h7 class="left-align">Recipe Title: Italian Skillet Chicken with Spinach, Tomatoes,
-                            and Onions</h7>
-                        <h8 class="left-align">Created by: Martha Steward</h8>
-                        <p class="left-align">Homemade chicken pot pie is comfort food at its best. This
-                            easy-to-make
-                            version utilizes rotisserie chicken, frozen vegetables, and store-bought puff
-                            pastry
-                            rather
-                            than pie dough.</p>
-                        <h8 class="left-align">Difficulty ⭐⭐⭐</h8>
-                    </div>
-                </div>
+
                 <div class="container">
                     <div class="row recipe-card-sml">
                         {{#each recipe}}
@@ -73,3 +71,5 @@
         </div>
     </div>
 </div>
+
+{{> footer}}
