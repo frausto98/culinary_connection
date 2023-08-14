@@ -1,0 +1,41 @@
+{{> navbar}}
+
+<div id="loginContainer" class="row">
+    <div class="col s6  offset-s3">
+        <form class="col s12">
+            <div class="row">
+                <h5 class="center-align"> Create your recipe </h5>
+                <div class="input-field col s12">
+                    <input id="recipename" type="text" class="validate">
+                    <label for="recipename">Recipe Name</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">Make sure your recipe name is
+                        descriptive</span>
+                </div>
+            
+                <div class="input-field col s12">
+                    <input id="ingredients" type="text" class="validate">
+                    <label for="ingredients">Ingredients</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">make sure to list all necessary
+                        ingredients</span>
+                </div>
+                <div class="input-field col s12">
+                    <input id="steps" type="text" class="validate">
+                    <label for="steps">Steps</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">create small steps with specific
+                        directions </span><i id="addstep" class="medium material-icons">add_circle</i>
+                </div>
+                <div class="center-align">
+                    <a id="submitBTN" href="/home" class="waves-effect waves-light btn blue">Create Recipe</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <ul id="steplist">
+    </ul>
+</div>
+
+<script src="/js/create.js"></script>
+
+{{> footer}}

@@ -67,6 +67,15 @@ router.get('/you', async (req, res) => {
     }
 });
 
+// router for creating recipes
+router.get('/create', async (req, res) => {
+    try {
+        res.render('create', {loggedIn: req.session.loggedIn});
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
 
 // get one recipe
 router.get('/recipe/:id', async (req, res) => {
