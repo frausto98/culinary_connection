@@ -42,9 +42,12 @@ Recipe.init(
         //DRY code above foregin keys are referenced in index.js
         //difficulty level
         difficulty_level: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
-            //add validate that it's either 1, 2, or 3
+            validate: {
+                isIn: [['easy', 'medium', 'hard']]
+            }
+            //add validate that it's either easy, medium, or hard
 
         },
         // cloudinary: {

@@ -4,14 +4,33 @@
   "password": "abcd12345678"  
 },
 {
+  "username": "John Doe",
+  "email": "johndoe@gmail.com",
+  "password": "abcd12345678"  
+},
+{
     "recipe_name": "tomato soup",
     "recipe_description": "tomato soup with basil",
     "user_id": 1,
-    "difficulty_level": 1
+    "difficulty_level": "easy"
 },
 {
     "recipe_name": "chicken soup",
     "recipe_description": "chicken soup with basil",
     "user_id": 1,
-    "difficulty_level": 2  
-}]
+    "difficulty_level": "medium"
+},
+{
+  "recipe_name": "broccoli cheddar soup",
+  "recipe_description": "A classic soup great with a sandwich or salad for lunch or dinner.",
+  "user_id": 2,
+  "difficulty_level": "medium"
+},
+{
+  "recipe_name": "chicken noodle soup",
+  "recipe_description": "A classic soup great with a sandwich or salad for lunch or dinner.",
+  "user_id": 2,
+  "difficulty_level": "hard"
+}
+]
+

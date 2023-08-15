@@ -1,75 +1,82 @@
 {{> navbar}}
 
 <div class="container">
-    <div class="section">
-        <div class="row">
-            <!-- left column begins here -->
-            <div class="col s3 recipe-feed">
-                {{!-- <h4 class="left-align">Latest Feed <i id="filter_bt" href="#" data-target='dropdown1'
-                        class="small material-icons">filter_list</i></h4> --}}
-                <a id="filter_bt" class='dropdown-trigger btn' data-target='dropdown1'>Filter</a>
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a class="easy">Easy</a></li>
-                    <li><a class="medium">Medium</a></li>
-                    <li><a class="hard">Hard</a></li>
-                </ul>
-                {{!-- <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a> --}}
-                {{#each recipe}}
-                {{> recipe}}
-                {{/each}}
-                <div class="container">
-                    <div id="recipes" class="row recipe-card-sml">
-                        <h7 class="left-align" id="title">Recipe Title</h7>
-                        <br>
-                        <h8 class="left-align"></h8>
-                        <p class="left-align" id="description"></p>
-                        <h8 id="difficultyNum" class="left-align">Difficulty {{>rating}}</h8>
-                    </div>
-                </div>
+  <div class="section">
+    <div class="row">
+      <!-- left column begins here -->
+      <div class="col s3 recipe-feed">
+        {{! <h4 class="left-align">Latest Feed <i id="filter_bt" href="#" data-target='dropdown1'
+                        class="small material-icons">filter_list</i></h4> }}
+        <a
+          id="filter_bt"
+          class="dropdown-trigger btn"
+          data-target="dropdown1"
+        >Filter</a>
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a class="easy">Easy</a></li>
+          <li><a class="medium">Medium</a></li>
+          <li><a class="hard">Hard</a></li>
+        </ul>
+        {{! <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a> }}
+        {{#each recipe}}
+        <div class="container">
+          <div class="row recipe-card-sml">
+            <h7 class="left-align" id="title">{{recipe_name}}</h7>
+            <br />
+            <h8 class="left-align">{{user.username}}</h8>
+            <p class="left-align">{{recipe_description}}</p>
+            <h8 id="difficultyNum" class="left-align">Difficulty
+              {{difficulty_level}}</h8>
+          </div>
+        </div>
+        {{/each}}
+        <div class="container">
+          <div class="row recipe-card-sml">
+            {{!-- {{#each recipe}} --}}
+            {{!-- {{> recipe}} --}}
+            {{!-- {{/each}} --}}
 
-                <div class="container">
-                    <div class="row recipe-card-sml">
-                        {{!-- {{#each recipe}} --}}
-                        {{> recipe}}
-                        {{!-- {{/each}} --}}
-
-                        {{!-- <h7 class="left-align">Recipe Title: Guyanese Chicken Curry</h7>
+            {{! <h7 class="left-align">Recipe Title: Guyanese Chicken Curry</h7>
                         <h8 class="left-align">Created by: ALICA RAMKIRPAL-SENHOUSE</h8>
                         <p class="left-align">With roots in Indian cooking, Guyanese chicken curry is a beloved recipe
                             you’ll find at Guyanese tables for family get-togethers, holiday parties, weeknight dinners,
                             or weekend afternoon meals.</p>
-                        <h8 class="left-align">Difficulty ⭐⭐⭐</h8> --}}
-                    </div>
-                </div>
-            </div>
-            <!-- left column ends here -->
-            <!-- right column with recipe details starts here -->
-            <div class="col s9 recipe-detail">
-                <h5 class="center">Easy Chicken Pot Pie</h5>
-                <h6 class="Steps">Step 1:</h6>
-                <p>Sauté the aromatics and make the roux:</p>
-                <p>In a Dutch oven over medium-high heat, melt the butter. Once the butter has melted and begins
-                    sizzling, add the onion, celery, and garlic. Using a large spoon to stir, sauté the
-                    vegetables until they become translucent, 3 to 4 minutes.</p>
-                <h5 class="Steps">Step 2:</h5>
-                <p>Sauté the aromatics and make the roux:</p>
-                <p>In a Dutch oven over medium-high heat, melt the butter. Once the butter has melted and begins
-                    sizzling, add the onion, celery, and garlic. Using a large spoon to stir, sauté the
-                    vegetables until they become translucent, 3 to 4 minutes.</p>
-                <h5 class="Steps">Step 3:</h5>
-                <p>Sauté the aromatics and make the roux:</p>
-                <p>In a Dutch oven over medium-high heat, melt the butter. Once the butter has melted and begins
-                    sizzling, add the onion, celery, and garlic. Using a large spoon to stir, sauté the
-                    vegetables until they become translucent, 3 to 4 minutes.</p>
-                <h5 class="Steps">Step 4:</h5>
-                <p>Sauté the aromatics and make the roux:</p>
-                <p>In a Dutch oven over medium-high heat, melt the butter. Once the butter has melted and begins
-                    sizzling, add the onion, celery, and garlic. Using a large spoon to stir, sauté the
-                    vegetables until they become translucent, 3 to 4 minutes.</p>
-            </div>
-            <!-- recipe detail ends here -->
+                        <h8 class="left-align">Difficulty ⭐⭐⭐</h8> }}
+          </div>
         </div>
+      </div>
+      <!-- left column ends here -->
+      <!-- right column with recipe details starts here -->
+      <div class="col s9 recipe-detail">
+        <h5 class="center">Easy Chicken Pot Pie</h5>
+        <h6 class="Steps">Step 1:</h6>
+        <p>Sauté the aromatics and make the roux:</p>
+        <p>In a Dutch oven over medium-high heat, melt the butter. Once the
+          butter has melted and begins sizzling, add the onion, celery, and
+          garlic. Using a large spoon to stir, sauté the vegetables until they
+          become translucent, 3 to 4 minutes.</p>
+        <h5 class="Steps">Step 2:</h5>
+        <p>Sauté the aromatics and make the roux:</p>
+        <p>In a Dutch oven over medium-high heat, melt the butter. Once the
+          butter has melted and begins sizzling, add the onion, celery, and
+          garlic. Using a large spoon to stir, sauté the vegetables until they
+          become translucent, 3 to 4 minutes.</p>
+        <h5 class="Steps">Step 3:</h5>
+        <p>Sauté the aromatics and make the roux:</p>
+        <p>In a Dutch oven over medium-high heat, melt the butter. Once the
+          butter has melted and begins sizzling, add the onion, celery, and
+          garlic. Using a large spoon to stir, sauté the vegetables until they
+          become translucent, 3 to 4 minutes.</p>
+        <h5 class="Steps">Step 4:</h5>
+        <p>Sauté the aromatics and make the roux:</p>
+        <p>In a Dutch oven over medium-high heat, melt the butter. Once the
+          butter has melted and begins sizzling, add the onion, celery, and
+          garlic. Using a large spoon to stir, sauté the vegetables until they
+          become translucent, 3 to 4 minutes.</p>
+      </div>
+      <!-- recipe detail ends here -->
     </div>
+  </div>
 </div>
 
 {{> footer}}
