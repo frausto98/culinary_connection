@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 // function to filter the recipes by difficulty
 function filterbydifficulty() {
-    fetch(`https://culinary-connections-2a73fa545141.herokuapp.com/filter/${filter_bt.value}`)
+    fetch(`/filter/${filter_bt.value}`)
         .then(response => response.json())
         .then(data => {
             let recipes = data;
