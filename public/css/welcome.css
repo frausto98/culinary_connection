@@ -89,6 +89,21 @@ main {
   margin-right: 20px;
 }
 
+#skippo {
+  /* border: 4px solid darkgreen; */
+  /* border-radius: 30px; */
+  /* padding: 8px; */
+  /* width: 30%; */
+  /* text-align: center; */
+  color: white;
+  background-color: #4d7e3e;
+  /* font-weight: bold; */
+  /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 #about {
   width: 50%;
   /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */

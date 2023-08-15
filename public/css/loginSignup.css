@@ -1,0 +1,28 @@
+#mainTitleCont {
+    background-color: #4d7e3e;
+    width: 100%;
+}
+#logoBTN {
+    color: white;
+}
+#loginContainer{
+    border: 4px solid darkgreen;
+  border-radius: 30px;
+  background-color: #c9efc7;
+}
+
+#signupContainer{
+    border: 4px solid darkgreen;
+  border-radius: 30px;
+  background-color: #c9efc7;
+}
+
+#loginBTN, #signupBTN{
+    color: white;
+  background-color: #4d7e3e;
+  /* font-weight: bold; */
+  /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+  
+  margin-left: 20px;
+  margin-right: 20px;
+}

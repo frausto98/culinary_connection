@@ -1,46 +1,48 @@
-<div class="container blue">
-    <div id="titleContainer" class="row red">
+<div class="container">
+    <div id="mainTitleCont">
+    <div id="titleContainer" class="row">
         <div class="col s8 offset-s2">
-            <h1 class="center-align"> Culinary Connections </h1>
+            <a id="logoBTN" href="/"> <h1 class="center-align"> Culinary Connections </h1> </a>
         </div>
     </div>
-    <div id="welcomeContainer" class="row green">
+    </div>
+    <div id="welcomeContainer" class="row">
         <div class="col s8 offset-s2">
             <h3 class="center-align"> Welcome </h3>
         </div>
     </div>
 
-    <div id="signupContainer" class="row">
-        <div class="col s6  offset-s3 red lighten-4">
+    <div class="row">
+        <div id="signupContainer" class="col s6  offset-s3">
             <form class="col s12">
                 <div class="row">
                     <h5 class="center-align"> Sign-Up </h5>
                     <div class="input-field col s12">
                         <input id="username" type="text" class="validate">
-                        <label class="white-text" for="username">Username</label>
+                        <label class="black-text" for="username">Username</label>
                     </div>
                     <div class="input-field col s12">
                         <input id="email" type="email" class="validate">
-                        <label class="white-text" for="email">Email</label>
+                        <label class="black-text" for="email">Email</label>
                         <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
                     </div>
                     <div class="input-field col s12">
                         <input id="password" type="password" class="validate">
-                        <label class="white-text" for="password">Password</label>
+                        <label class="black-text" for="password">Password</label>
                     </div>
                     <div class="input-field col s12">
                         <input id="confirmPW" type="password" class="validate">
-                        <label class="white-text" for="confirmPW">Confirm Password</label>
+                        <label class="black-text" for="confirmPW">Confirm Password</label>
                     </div>
                     <div class="center-align">
-                    <a id="signupBTN" href="/home" class="waves-effect waves-light btn blue">button</a>
+                    <a id="signupBTN" href="/home" class="waves-effect waves-light btn">button</a>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+{{> footer}}
 </div>
 
-{{> footer}}
 
 <script src="/js/signup.js"> </script>
