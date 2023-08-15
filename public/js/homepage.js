@@ -1,9 +1,9 @@
 const filter_bt = document.getElementById('filter_bt');
 // event listner to activate the javascript for the dropdown menu
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems);
-  });
+});
 // function to filter the recipes by difficulty
 function filterbydifficulty() {
     fetch(`http://localhost:3001/filter/${filter_bt.value}`)
@@ -11,17 +11,22 @@ function filterbydifficulty() {
         .then(data => {
             let recipes = data;
             let div = document.getElementById('recipes');
+            // clear existing info to prevent duplicates
             div.innerHTML = '';
+            console.log(filter_bt.value);
+            console.log(recipes);
+            // loop through the recipes and display the ones that match the difficulty level
             for (let i = 0; i < recipes.length; i++) {
-                let recipe_difficulty = recipes[i].difficulty_level; 
-                if ((recipe_difficulty === 1 && filter_bt.value === 'easy') ||
-                    (recipe_difficulty === 2 && filter_bt.value === 'medium') ||
-                    (recipe_difficulty === 3 && filter_bt.value === 'hard')) {
+                let recipe_difficulty = recipes[i].difficulty_level;
+                if (recipe_difficulty == filter_bt.value) {
                     let newdiv = document.createElement('div');
-                    newdiv.innerHTML = 'Recipe: ' + recipes[i].recipe_name; 
+                    newdiv.innerHTML = 'Recipe: ' + recipes[i].recipe_name;
                     div.appendChild(newdiv);
                 }
-            } console.log(recipes);
+            } console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
         });
 }
 
