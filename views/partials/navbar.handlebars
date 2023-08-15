@@ -4,18 +4,18 @@
                 src="../../public/images/logo-color-sml.png" width="auto" height="56px"></a>
         <a id="logo-container" href="#" class="brand-logo">Culinary Connections</a>
         <ul class="right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Create a Recipe</a></li>
-            <li><a id="logoutBTN" href="#">Login/Logout</a></li>
+            <li><a id = "navBTN1" href="/you">Dashboard</a></li>
+            <li><a id = "navBTN2" href="/create">Create a Recipe</a></li>
+            <li><a id="logoutBTN" href="/home">Logout</a></li>
         </ul>
         <!-- nav bar hamburger menu trigger for mobile -->
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="../dashboard.handlebars">Dashboard</a></li>
+            <li><a href="/you">Dashboard</a></li>
             <!-- need to add the dashboard route -->
-            <li><a href="../create.handlebars">Create a Recipe</a></li>
+            <li><a href="#">Create a Recipe</a></li>
             <!-- need to add the create recipe route -->
-            <li><a href="#">Log in/Logout</a></li>
+            <li><a href="/home">Logout</a></li>
             <!-- need to add a dynamic route where it's log out if the user has a session or log in if no session is detected -->
         </ul>
         <!-- ends here -->
