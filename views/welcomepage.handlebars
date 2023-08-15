@@ -26,6 +26,10 @@
           <a id="signup" class="waves-effect waves-light btn" href="/signup">Sign Up</a>
           <a id="login" class="waves-effect waves-light btn" href="/login">Login</a>
           {{!-- <a id="login" href="/login">Login</a> --}}
+            {{#if loggedIn}}
+            <span>It looks like you may be logged in already...</span>
+            <a id="skippo" class="waves-effect waves-light btn" href="/home">... Click Me!</a>
+            {{/if}}
         </div>
       </div>
       <div id="about">

@@ -7,7 +7,7 @@ const withAuth = require('../utils/auth');
 // get route for welcome page(BEFORE LOGIN)
 router.get('/', async (req, res) => {
     try {
-        res.render('welcome');
+        res.render('welcomepage', { loggedIn: req.session.loggedIn });
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
@@ -47,7 +47,7 @@ router.get('/home', withAuth, async (req, res) => {
 });
 
 // route to your dashboard
-router.get('/you', async (req, res) => {
+router.get('/you', withAuth, async (req, res) => {
     try {
         // const userData = await User.findByPk(req.session.user_id, {
         //     attributes: { exclude: ['password', 'id'] },
@@ -64,7 +64,7 @@ router.get('/you', async (req, res) => {
 });
 
 // router for creating recipes
-router.get('/create', async (req, res) => {
+router.get('/create', withAuth, async (req, res) => {
     try {
         res.render('create', { loggedIn: req.session.loggedIn });
     } catch (err) {
