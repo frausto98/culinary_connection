@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 //  if you need to run the homepage, remove the withAuth middleware
 // get all recipes for homepage
-router.get('/home', async (req, res) => {
+router.get('/home', withAuth, async (req, res) => {
     try {
         const recipeData = await Recipe.findAll({
             include: [
