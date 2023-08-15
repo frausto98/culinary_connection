@@ -38,12 +38,8 @@ router.get('/home', withAuth, async (req, res) => {
         const recipes = recipeData.map((recipe) =>
             recipe.get({ plain: true })
         );
-
-
-        res.render('homepage', {
-            recipes,
-            loggedIn: req.session.loggedIn,
-        });
+        res.json(recipes);
+        res.render('homepage', { recipes, loggedIn: req.session.loggedIn });
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
