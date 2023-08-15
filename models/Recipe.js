@@ -47,7 +47,7 @@ Recipe.init(
             validate: {
                 isIn: [['easy', 'medium', 'hard']]
             }
-            //add validate that it's either 1, 2, or 3
+            //add validate that it's either easy, medium, or hard
 
         },
         // cloudinary: {
