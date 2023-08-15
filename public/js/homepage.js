@@ -6,22 +6,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 // function to filter the recipes by difficulty
 function filterbydifficulty() {
-    fetch('http://localhost:3001/filter/:difficulty').then(response => response.json()).then(data => {
-        let recipes = data.recipes;
-        let div = document.getElementById('recipes');
-        div.innerHTML = '';
-        for (let i = 0; i < recipes.length; i++) {
-            let recipe_difficulty = recipes[i].difficulty;
-            if (recipe_difficulty == filter_bt.value) {
-                let newdiv = document.createElement('div');
-                newdiv.innerHTML = 'recipe';
-                div.appendChild(newdiv);
-            }
-        }
-    });
+    fetch(`http://localhost:3001/filter/${filter_bt.value}`)
+        .then(response => response.json())
+        .then(data => {
+            let recipes = data;
+            let div = document.getElementById('recipes');
+            div.innerHTML = '';
+            for (let i = 0; i < recipes.length; i++) {
+                let recipe_difficulty = recipes[i].difficulty_level; 
+                if ((recipe_difficulty === 1 && filter_bt.value === 'easy') ||
+                    (recipe_difficulty === 2 && filter_bt.value === 'medium') ||
+                    (recipe_difficulty === 3 && filter_bt.value === 'hard')) {
+                    let newdiv = document.createElement('div');
+                    newdiv.innerHTML = 'Recipe: ' + recipes[i].recipe_name; 
+                    div.appendChild(newdiv);
+                }
+            } console.log(recipes);
+        });
 }
 
-// event listener changes the value for the difficulty in the above funciton and then calls the function when the associated button is clicked
 var element = document.getElementsByClassName('easy');
 for (var i = 0; i < element.length; i++) {
     element[i].addEventListener('click', function () {
