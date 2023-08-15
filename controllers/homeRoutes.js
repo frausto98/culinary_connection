@@ -107,11 +107,14 @@ router.get('/recipe/:id', async (req, res) => {
 // need get route for filtering recipes by rating difficulty
 router.get('/filter/:difficulty', async (req, res) => {
     try {
-        const recipeData = await Recipe.findAll(req.params.difficulty_level, {
+        const recipeData = await Recipe.findAll({
+            where: {
+                difficulty_level: req.params.difficulty
+            },
             include: [
                 {
                     model: Steps,
-                    attributes: ['id', 'step_number', 'step_description', 'recipe_id',]
+                    attributes: ['id', 'step_number', 'step_description', 'recipe_id']
                 },
                 {
                     model: Ingredient,
@@ -123,14 +126,23 @@ router.get('/filter/:difficulty', async (req, res) => {
                 }
             ],
         });
-        const recipe = recipeData.get({ plain: true });
-        res.render('recipe', { recipe, loggedIn: req.session.loggedIn });
+
+        const recipes = recipeData.map(recipeInstance => recipeInstance.get({ plain: true }));
         
+        res.render('partials/recipe', { recipes, loggedIn: req.session.loggedIn });
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
     }
 });
+
+
+
+
+
+
+
+
 
 
 // //moved ratings filter to resulttss page

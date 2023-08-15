@@ -1,0 +1,17 @@
+[{
+  "username": "Jane Doe",
+  "email": "janedoe@gmail.com",
+  "password": "abcd12345678"  
+},
+{
+    "recipe_name": "tomato soup",
+    "recipe_description": "tomato soup with basil",
+    "user_id": 1,
+    "difficulty_level": 1
+},
+{
+    "recipe_name": "chicken soup",
+    "recipe_description": "chicken soup with basil",
+    "user_id": 1,
+    "difficulty_level": 2  
+}]
