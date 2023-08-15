@@ -124,13 +124,15 @@ router.get('/filter/:difficulty', async (req, res) => {
         });
 
         const recipes = recipeData.map(recipeInstance => recipeInstance.get({ plain: true }));
-        res.json(recipes);
+        
+        // Render the homepage view with the filtered recipes
         res.render('homepage', { recipes, loggedIn: req.session.loggedIn });
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
     }
 });
+
 
 
 

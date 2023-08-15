@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // function to filter the recipes by difficulty
 function filterbydifficulty() {
     fetch('http://localhost:3001/filter/:difficulty').then(response => response.json()).then(data => {
-        console.log("Response: ", data);
         let recipes = data.recipes;
         let div = document.getElementById('recipes');
         div.innerHTML = '';
