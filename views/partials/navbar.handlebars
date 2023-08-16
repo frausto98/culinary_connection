@@ -1,19 +1,19 @@
 <nav class="navigation">
-    <div class="nav-wrapper container">
+    <div class="nav-wrapper container show-on-medium-and-up">
         <a id="logo-container" href="#" class="brand-logo.left" viewBox="0 0 56 56"><img
                 src="../../public/images/logo-color-sml.png" width="auto" height="56px"></a>
-        <a id="logo-container" href="#" class="brand-logo">Culinary Connections</a>
+        <a id="logo-container" href="/" class="brand-logo">Culinary Connections</a>
         <ul class="right">
             <li><a id = "navBTN1" href="/you">Dashboard</a></li>
             <li><a id = "navBTN2" href="/create">Create a Recipe</a></li>
-            <li><a id="logoutBTN" href="/home">Logout</a></li>
+            <li><a id="logoutBTN" href="/home"> <i class="material-icons right">logout</i>Logout</a></li>
         </ul>
         <!-- nav bar hamburger menu trigger for mobile -->
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-small"><i class="material-icons">menu</i></a>
         <ul class="sidenav" id="mobile-demo">
             <li><a href="/you">Dashboard</a></li>
             <!-- need to add the dashboard route -->
-            <li><a href="#">Create a Recipe</a></li>
+            <li><a href="/create">Create a Recipe</a></li>
             <!-- need to add the create recipe route -->
             <li><a href="/home">Logout</a></li>
             <!-- need to add a dynamic route where it's log out if the user has a session or log in if no session is detected -->

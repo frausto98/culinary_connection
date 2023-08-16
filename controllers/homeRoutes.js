@@ -63,6 +63,17 @@ router.get('/you', withAuth, async (req, res) => {
     }
 });
 
+router.get('/ingredient', async (req, res) => {
+    try {
+        const ingredientData = await Ingredient.findAll({});
+
+        res.json(ingredientData);
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
 // router for creating recipes
 router.get('/create', withAuth, async (req, res) => {
     try {
