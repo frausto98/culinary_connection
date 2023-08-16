@@ -20,7 +20,10 @@ function filterbydifficulty() {
                 let recipe_difficulty = recipes[i].difficulty_level;
                 if (recipe_difficulty == filter_bt.value) {
                     let newdiv = document.createElement('div');
-                    newdiv.innerHTML = 'Recipe: ' + recipes[i].recipe_name;
+                    newdiv.setAttribute('class', 'card-panel hoverable');
+                    newdiv.innerHTML = 'Recipe: ' + recipes[i].recipe_name + 
+                    '<br>' + 'Difficulty: ' + recipes[i].difficulty_level + 
+                    '<br>' + 'Description: ' + recipes[i].recipe_description;
                     div.appendChild(newdiv);
                 }
             } console.log(data);

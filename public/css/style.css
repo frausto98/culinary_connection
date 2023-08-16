@@ -24,6 +24,10 @@ nav {
 }
 
 .recipe-card-sml {
-    background-color: #C9EFC7;
+    /* background-color: #C9EFC7; */
 }
 /* end of dashboard css style */
+
+.card-panel {
+    background-color: #C9EFC7;
+}
