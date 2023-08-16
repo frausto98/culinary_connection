@@ -5,14 +5,20 @@ const Recipe = require('../../models/Recipe');
 
 // create new recipe
 router.post('/', async (req, res) => {
+    console.log(req.body);
     try {
         const recipe = await Recipe.create({
-            recipe_name: req.body.recipe_name,
-            recipe_description: req.body.recipe_description,
-            difficulty_level: req.body.difficulty_level,
+            difficulty_level: req.body.difficultyLevel,
+            recipe_name: req.body.recipeName,
+            recipe_description: req.body.recipeDescription,
+            user_id: req.session.user_id
+        });
+        req.session.save(() => {
+            // req.session.loggedIn = true;
+            req.session.recipe_id = recipe.id;
+            res.status(200).json(recipe);
         });
 
-        res.status(200).json(recipe);
     } catch (err) {
         res.status(400).json(err);
     }
@@ -23,7 +29,7 @@ router.put('/:id', async (req, res) => {
         const recipe = await Recipe.update({
             recipe_name: req.body.recipe_name,
             recipe_description: req.body.recipe_description,
-            difficulty_level: req.body.difficulty_level,
+            difficulty_level: req.body.difficultyLevel,
         },
             {
                 where: {

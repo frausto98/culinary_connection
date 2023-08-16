@@ -8,9 +8,24 @@
                 <div class="input-field col s12">
 
                     {{!-- optional --}}
-                    <input id="recipeNum" type="text" class="validate">
-                    <label for="recipeNum">Recipe ID</label>
+
+                    <div class="input-field col l4">
+                        <select id="difficultyLevel">
+                            <option>Chose the difficulty level</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    {{!-- <select id="difficultyLevel">
+                        <option value="easy">easy</option>
+                        <option value="medium">medium</option>
+                        <option value="hard">hard</option>
+                    </select> --}}
+
+                    {{!-- <label for="recipeNum">Recipe ID</label>
                     <span class="helper-text">Make sure to use R.ID to reference in the Ingredients and Steps</span>
+                    --}}
                     {{!-- ... --}}
                 </div>
 
@@ -37,21 +52,20 @@
                     <span class="helper-text">Enter your ingredient here.</span>
                 </div>
 
-
-                    
                 <div class="input-field col s12">
                     <input id="ingredientMeasure" type="text" class="validate">
                     <label for="ingredientMeasure">Measurement/Unit:</label>
                     <span class="helper-text">Enter your measurements and unit here.</span>
                 </div>
-                    
-                <div class="input-field col s12">
+                <i id="addIngredients" class="medium material-icons">add_circle</i>
+
+                {{!-- <div class="input-field col s12">
                     <input id="ingRecipeID" type="text" class="validate">
                     <label for="ingRecipeID">R.ID:</label>
                     <span class="helper-text">Reference your R.ID here.</span>
 
-                    <i id="addIngredients" class="medium material-icons">add_circle</i>
-                </div>
+
+                </div> --}}
             </div>
         </form>
         <form id="createSteps" action="/api/steps/" method="post" class="col s12">
@@ -59,27 +73,30 @@
                 <div class="input-field col s12">
                     <input id="stepNum" type="text" class="validate">
                     <label for="stepNum">Step Number:</label>
-                    <span class="helper-text">Enter a number to ORDER your steps.</span>
+                    <span class="helper-text">Enter a number in descending order for your steps.</span>
                 </div>
-                    {{!-- input for #stepDescription --}}
+                {{!-- input for #stepDescription --}}
                 <div class="input-field col s12">
+                    <input id="stepDescription" type="text" class="validate">
+                    <label for="steDescription">Step Description:</label>
+                    <span class="helper-text">Enter the directions for the step.</span>
+                </div>
+                <i id="addStep" class="medium material-icons">add_circle</i>
 
+                {{!-- input for #stepRecipeID --}}
+                {{!-- <div class="input-field col s12">
+                    <input id="stepRecipeID" type="text" class="validate">
+                    <label for="stepRecipeID">R.ID</label>
+                    <span class="helper-text">Reference your R.ID here.</span>
                 </div>
 
-                    {{!-- input for #stepRecipeID --}}
-                <div class="input-field col s12">
-
-                </div>
-
-
-                    <i id="addStep" class="medium material-icons">add_circle</i>
-                </div>
-                {{!-- <div class="center-align">
-                    <a id="submitBTN" href="/home" class="waves-effect waves-light btn blue">Create Recipe</a>
-                </div> --}}
             </div>
-        </form>
+            {{!-- <div class="center-align">
+                <a id="submitBTN" href="/home" class="waves-effect waves-light btn blue">Create Recipe</a>
+            </div> --}}
     </div>
+    </form>
+</div>
 </div>
 <div class="row">
     <div class="col s4 offset-2">

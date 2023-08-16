@@ -1,5 +1,5 @@
 const filter_bt = document.getElementById('filter_bt');
-// event listner to activate the javascript for the dropdown menu
+// event listener to activate the javascript for the dropdown menu
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems);
