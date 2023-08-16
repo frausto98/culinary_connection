@@ -14,10 +14,19 @@ Steps.init(
         step_number: {
             type:DataTypes.INTEGER,
             allowNull: false,
+            references: {
+                model: 'steps',
+                key: 'id'
+            }
+
         },
         step_description: {
             type:DataTypes.STRING,
             allowNull: false,
+            references: {
+                model: 'steps',
+                key: 'step_number'
+            }
         },
         recipe_id: {
             type:DataTypes.INTEGER,

@@ -2,49 +2,99 @@
 
 <div id="createContainer" class="row">
     <div class="col s6  offset-s3">
-        <form class="col s12">
+        <form id="createRecipe" action="/api/recipe/" method="post" class="col s12">
             <div class="row">
                 <h5 class="center-align"> Create your recipe </h5>
                 <div class="input-field col s12">
-                    <input id="recipename" type="text" class="validate">
-                    <label for="recipename">Recipe Name</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Make sure your recipe name is
-                        descriptive</span>
+
+                    {{!-- optional --}}
+                    <input id="recipeNum" type="text" class="validate">
+                    <label for="recipeNum">Recipe ID</label>
+                    <span class="helper-text">Make sure to use R.ID to reference in the Ingredients and Steps</span>
+                    {{!-- ... --}}
                 </div>
 
                 <div class="input-field col s12">
-                    <input id="ingredients" type="text" class="validate">
-                    <label for="ingredients">Ingredients</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">make sure to list all necessary
-                        ingredients</span>
+                    <input id="recipeName" type="text" class="validate">
+                    <label for="recipeName">Recipe Name</label>
+                    <span class="helper-text">Make sure your recipe name is descriptive</span>
                 </div>
+
                 <div class="input-field col s12">
-                    <input id="steps" type="text" class="validate">
-                    <label for="steps">Steps</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">create small steps with specific
-                        directions </span><i id="addstep" class="medium material-icons">add_circle</i>
+                    <input id="recipeDescription" type="text" class="validate">
+                    <label for="recipeDescription">Recipe description</label>
+                    <span class="helper-text">Make sure to give a short description of your meal.</span>
+
+                    <i id="addRecipe" class="medium material-icons">add_circle</i>
                 </div>
-                <div class="center-align">
+            </div>
+        </form>
+        <form id="createIngredients" action="/api/ingredients/" method="post" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="ingredientName" type="text" class="validate">
+                    <label for="ingredientName">Ingredient:</label>
+                    <span class="helper-text">Enter your ingredient here.</span>
+                </div>
+
+
+                    
+                <div class="input-field col s12">
+                    <input id="ingredientMeasure" type="text" class="validate">
+                    <label for="ingredientMeasure">Measurement/Unit:</label>
+                    <span class="helper-text">Enter your measurements and unit here.</span>
+                </div>
+                    
+                <div class="input-field col s12">
+                    <input id="ingRecipeID" type="text" class="validate">
+                    <label for="ingRecipeID">R.ID:</label>
+                    <span class="helper-text">Reference your R.ID here.</span>
+
+                    <i id="addIngredients" class="medium material-icons">add_circle</i>
+                </div>
+            </div>
+        </form>
+        <form id="createSteps" action="/api/steps/" method="post" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="stepNum" type="text" class="validate">
+                    <label for="stepNum">Step Number:</label>
+                    <span class="helper-text">Enter a number to ORDER your steps.</span>
+                </div>
+                    {{!-- input for #stepDescription --}}
+                <div class="input-field col s12">
+
+                </div>
+
+                    {{!-- input for #stepRecipeID --}}
+                <div class="input-field col s12">
+
+                </div>
+
+
+                    <i id="addStep" class="medium material-icons">add_circle</i>
+                </div>
+                {{!-- <div class="center-align">
                     <a id="submitBTN" href="/home" class="waves-effect waves-light btn blue">Create Recipe</a>
-                </div>
+                </div> --}}
             </div>
         </form>
     </div>
 </div>
 <div class="row">
-<div class="col s4 offset-2">
-    <div class="card green darken-1">
-        <div class="card-content white-text">
-            <span class="card-title">Steps</span>
-            <ul id="steplist">
-            </ul>
+    <div class="col s4 offset-2">
+        <div class="card green darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Steps</span>
+                <ul id="steplist">
+                </ul>
+            </div>
+            {{!-- <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div> --}}
         </div>
-        {{!-- <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-        </div> --}}
     </div>
-</div>
 </div>
 
 <script src="/js/create.js"></script>
