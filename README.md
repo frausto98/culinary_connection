@@ -55,8 +55,9 @@ Adrian Frausto, Sam Thomas and Stephanie Lenorovitz
 
 ## Questions
 
-For any issues, please contact us at:
+For any issues, please contact us at:<br>
 Adrian Frausto 
+frausto9298@yahoo.com
 <br>
 Or check out my Github page https://github.com/frausto98
 
