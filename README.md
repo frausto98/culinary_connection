@@ -18,6 +18,27 @@ Visit the link https://culinary-connections-2a73fa545141.herokuapp.com/, create 
 
 ![image](./public/images/CulinaryConnection_hp_img.png)
 
+## Technologies Used
+<u>FrontEnd</u>
+HTML<br>
+CSS<br>
+Javascript / jQuery<br>
+Fetch / AJAX<br>
+Web API<br>
+Materialize<br>
+Excalidraw
+
+<u>BackEnd</u>
+<br>Node<br>
+NPM<br>
+Express<br>
+MySQL<br>
+Sequelize ORM<br>
+Npm validator<br>
+Session authentication<br>
+Handlebars - partials
+
+
 ## Usage
 
 This app is easy to use, just click the link and you'll see a sign up  and log in button. Once you create a log in with a unique email and 12 letter password, you can see all of the recipes available on your homepage. If you click on a recipe card in your feed, it will open up so that you can see the details of the recipe, all the ingredients and the easy to read step by step process of how to create that meal. In the nav bar, you will see a link to create a new recipe. On the create recipe page, you will need to enter in a recipe name, ingredients and a step by step instructions for the recipe. Make sure to give your recipe a difficulty level of easy, medium or hard so others know what to expect. We hope you enjoy this app and that it helps support all of your home chef needs.
