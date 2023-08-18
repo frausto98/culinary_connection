@@ -77,7 +77,11 @@ router.get('/ingredient', async (req, res) => {
 // router for creating recipes
 router.get('/create', withAuth, async (req, res) => {
     try {
-        res.render('create', { loggedIn: req.session.loggedIn });
+        const stepsData = await Steps.findAll();
+        const steps = stepsData.map((step) =>
+            step.get({ plain: true })
+        );
+        res.render('create', { loggedIn: req.session.loggedIn, steps });
     } catch (err) {
         res.status(500).json(err);
         console.log(err);

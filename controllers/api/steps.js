@@ -5,23 +5,25 @@ const Steps = require('../../models/Step');
 
 // create new step
 router.post('/', async (req, res) => {
-    try {
+    // try {
+        console.log(req.body);
         const step = await Steps.create({
-            step_number: req.body.step_number,
-            step_description: req.body.step_description,
+            step_number: req.body.stepNum,
+            step_description: req.body.stepDescription,
+            recipe_id: req.session.recipe_id,
         });
 
         res.status(200).json(step);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+    // } catch (err) {
+    //     res.status(400).json(err);
+    // }
 });
 
 router.put('/:id', async (req, res) => {
     try {
         const step = await Steps.update({
-            step_number: req.body.step_number,
-            step_description: req.body.step_description,
+            step_number: req.body.stepNum,
+            step_description: req.body.stepDescription,
         },
             {
                 where: {
