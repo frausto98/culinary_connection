@@ -1,17 +1,17 @@
 // functionality for addStep bt
-const steps = [];
-document.getElementById('addStep').addEventListener('click', function () {
-    const step = document.getElementById('steps').value;
-    steps.push(step);
-    // console.log(steps);
-    document.getElementById('steps').value = '';
-    document.getElementById('steplist').innerHTML = '';
-    steps.forEach(step => {
-        const li = document.createElement('li');
-        li.innerHTML = step;
-        document.getElementById('steplist').appendChild(li);
-    });
-});
+// const steps = [];
+// document.getElementById('addStep').addEventListener('click', function () {
+//     const step = document.getElementById('stepNum', 'stepDescription').value;
+//     steps.push(step);
+//     console.log(steps);
+//     // document.getElementById('stepNum').value = '';
+//     // document.getElementById('stepDescription').innerHTML = '';
+//     steps.forEach(step => {
+//         const li = document.createElement('li');
+//         li.innerHTML = step;
+//         document.getElementById('createSteps').appendChild(li);
+//     });
+// });
 
 /////////////////////////////////////
 
@@ -82,17 +82,17 @@ event.preventDefault();
 
 const stepNum = document.getElementById('stepNum').value
 const stepDescription = document.getElementById('stepDescription').value
-// const stepRecipeID = document.getElementById('stepRecipeID').value
 
 if (!stepNum || !stepDescription) {
     alert('Please enter a step number and description');
     return;
 }
+alert(stepNum + stepDescription);
 
 if (stepNum && stepDescription) {
-    const response = await fetch('/api/Step/', {
+    const response = await fetch('/api/steps/', {
         method: 'POST',
-        body: JSON.stringify({ingredName, ingredMeasure}),
+        body: JSON.stringify({stepNum, stepDescription}),
         headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {

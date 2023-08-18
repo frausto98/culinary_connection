@@ -6,11 +6,11 @@
 {
   "username": "John Doe",
   "email": "johndoe@gmail.com",
-  "password": "abcd12345678"  
+  "password": "12345abcdefgh"  
 },
 {
-    "recipe_name": "tomato soup",
-    "recipe_description": "tomato soup with basil",
+    "recipe_name": "Tomato Soup",
+    "recipe_description": "Tomato soup with basil",
     "user_id": 1,
     "difficulty_level": "easy"
 },
