@@ -50,10 +50,7 @@ Recipe.init(
             //add validate that it's either easy, medium, or hard
 
         },
-        // cloudinary: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        // },
+
     },
     {
         sequelize,
