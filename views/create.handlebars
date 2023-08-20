@@ -82,9 +82,39 @@
                     <span class="helper-text">Enter the directions for the step.</span>
                 </div>
                 <i id="addStep" class="medium material-icons">add_circle</i>
-        </form>
-        <ul>
-            {{#each steps as |step|}}
-            <li>{{step.step_number}} {{step.step_description}}</li>
-            {{/each}}
-        </ul>
+
+                {{!-- input for #stepRecipeID --}}
+                 {{!-- <div class="input-field col s12">
+                    <input id="stepRecipeID" type="text" class="validate">
+                    <label for="stepRecipeID">R.ID</label>
+                    <span class="helper-text">Reference your R.ID here.</span>
+                </div> --}}
+
+            </div>
+            {{!-- <div class="center-align">
+                <a id="submitBTN" href="/home" class="waves-effect waves-light btn blue">Create Recipe</a>
+            </div> --}}
+    </div>
+    </form>
+</div>
+</div>
+<div class="row">
+    <div class="col s4 offset-2">
+        <div class="card green darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Steps</span>
+                <ul id="steplist">
+                </ul>
+            </div>
+            {{!-- <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div> --}}
+        </div>
+    </div>
+</div>
+
+<script src="/js/create.js"></script>
+
+{{> footer}}
+

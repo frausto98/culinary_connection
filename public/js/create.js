@@ -35,11 +35,13 @@ if (difficultyLevel && recipeName && recipeDescription) {
         body: JSON.stringify({ difficultyLevel, recipeName, recipeDescription }),
         headers: { 'Content-Type': 'application/json' },
     });
-    if (response.ok) {
-        alert('Recipe created');
-    } else {
-        alert('Failed to enter');
-    }
+    console.log(response)
+    console.log(response.statusText)
+    // if (response.ok) {
+    //     alert('Recipe created');
+    // } else {
+    //     alert('Failed to enter');
+    // }
 }
 });
 
