@@ -19,31 +19,23 @@
         </ul>
         
         {{#each recipes}}
-        <div class="container">
-          <div class="row recipe-card-sml">
-            <h7 class="left-align" id="title">{{recipe_name}}</h7>
-            <br />
-            <h8 class="left-align">{{user.username}}</h8>
-            <p class="left-align">{{recipe_description}}</p>
-            <h8 id="difficultyNum" class="left-align">Difficulty
-              {{difficulty_level}}</h8>
+        <div class="recipeContainer">
+          <div class="row">
+            <div id="recipeCard" class="card">
+              <div class="card-content  white-text">
+                <h5 id="recipeTitle" class="left-align" id="title">{{recipe_name}}</h5>
+                <br/>
+                <p id="recipeDescrition" class="left-align">{{recipe_description}}</p>
+                <br/>
+                <span id="creatorName" class="left-align"> Created by: {{user.username}}</span>
+                <br/>
+                <span id="difficultyNum" class="left-align"> Difficulty: {{difficulty_level}}</span>
+              </div>
+            </div>
           </div>
         </div>
         {{/each}}
         
-        <div class="container">
-          <div class="row recipe-card-sml">
-            <div id="recipes">
-            </div>
-
-            {{! <h7 class="left-align">Recipe Title: Guyanese Chicken Curry</h7>
-                        <h8 class="left-align">Created by: ALICA RAMKIRPAL-SENHOUSE</h8>
-                        <p class="left-align">With roots in Indian cooking, Guyanese chicken curry is a beloved recipe
-                            you’ll find at Guyanese tables for family get-togethers, holiday parties, weeknight dinners,
-                            or weekend afternoon meals.</p>
-                        <h8 class="left-align">Difficulty ⭐⭐⭐</h8> }}
-          </div>
-        </div>
       </div>
       <!-- left column ends here -->
       <!-- right column with recipe details starts here -->

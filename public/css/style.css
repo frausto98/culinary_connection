@@ -28,6 +28,10 @@ nav {
 }
 /* end of dashboard css style */
 
-.card-panel {
-    background-color: #C9EFC7;
+#recipeCard {
+    background-color: #4D7E3E;
+    border: 5px;
+    border-radius: 20px;
+    border-color: #C9EFC7;
 }
+
